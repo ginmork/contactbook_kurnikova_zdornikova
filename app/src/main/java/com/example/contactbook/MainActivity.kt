@@ -46,11 +46,10 @@ fun ContactBookScreen() {
         }
 
         Button(onClick = {
-            val intent = Intent(Intent.ACTION_SENDTO).apply {
-                data = "mailto:".toUri()
-                putExtra(Intent.EXTRA_EMAIL, arrayOf("contact@example.com"))
-                putExtra(Intent.EXTRA_SUBJECT, emailSubject)
-            }
+            val intent = Intent(Intent.ACTION_SENDTO)
+            intent.data = "mailto:".toUri()
+            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("contact@example.com"))
+            intent.putExtra(Intent.EXTRA_SUBJECT, emailSubject)
             safeStart(context, intent)
         }) {
             Text(stringResource(R.string.btn_email))
@@ -65,11 +64,10 @@ fun ContactBookScreen() {
         }
 
         Button(onClick = {
-            val sendIntent = Intent(Intent.ACTION_SEND).apply {
-                type = "text/plain"
-                putExtra(Intent.EXTRA_TEXT, shareText)
-            }
-            context.startActivity(Intent.createChooser(sendIntent, shareTitle))
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, shareText)
+            context.startActivity(Intent.createChooser(intent, shareTitle))
         }) {
             Text(stringResource(R.string.btn_share))
         }
