@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ContactBook</string>
+    <string name="btn_call">Позвонить</string>
+    <string name="btn_email">Написать email</string>
+    <string name="email_subject">Обращение</string>
+    <string name="btn_map">Показать офис на карте</string>
+    <string name="map_label">Наш офис</string>
+    <string name="btn_share">Поделиться контактом</string>
+    <string name="share_title">Поделиться через...</string>
+    <string name="share_text">Контакт: +7 (495) 123-45-67, contact@example.com</string>
+    <string name="error_no_app">Нет подходящего приложения</string>
 </resources>
